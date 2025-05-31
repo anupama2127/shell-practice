@@ -5,9 +5,10 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\E[0M"
-LOGS_FOLDER="/var/log/shellscript-logs"
+LOGS_FOLDERS="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
+LOG_FILE=$LOGS_FOLDER/$SCRIPT_NAME.log"
+
 mkdir -p $LOGS_FOLDER
 echo "script started executing at: $(date)" | tee -a $LOG_FILE
 
@@ -23,7 +24,7 @@ fi
 VALIDATE(){
     if [ $? -eq 0 ]
 then
-    echo  -e "installing $2 is ... $G SUCCESS $N" | tee -a $LOG_FILE 
+    echo  -e "installing $2 is ... $G SUCCESS $N " | tee -a $LOG_FILE
 else
     echo -e "installing $2 is ... $R FAILURE $N" | tee -a $LOG_FILE
 fi 
@@ -46,11 +47,11 @@ then
 else
    echo -e "Nothing to do python... $Y already installed $N" | tee -a $LOG_FILE
 fi
-dnf list installed nginx &>>$LOG_FILE
+dnf list installed nginx &>>$LOG_FIL
  if [ $? -ne 0 ]
 then
     echo "nginx is not installed... going to install it" | tee -a $LOG_FILE
-    dnf install nginx -y &>>$LOG_FILE
+    dnf install nginx -y &>>$LOG_FIL
     VALIDATE $? "nginx"    
 else
    echo -e "Nothing to do nginx... $Y already installed $N" | tee -a $LOG_FILE
