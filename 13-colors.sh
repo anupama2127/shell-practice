@@ -49,4 +49,4 @@ then
     VALIDATE $? "nginx"    
 else
    echo -e "Nothing to do nginx... $Y already installed $N"
-fi  
+fi
