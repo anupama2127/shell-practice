@@ -7,14 +7,14 @@ Y="\e[33m"
 N="\E[0M"
 LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOG_FIL=$LOGS_FOLDER/$SCRIPT_NAME.log"
+LOG_FIL="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
-echo "script started executing at: $(date)"n | tee -a $LOG_FILE
+echo "script started executing at: $(date)" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]
 then
-    echo -e "$R ERROR:: Please run this script with root access $N" | tee -a $LOG_FILE
+    echo -e "$R ERROR:: Please run this script with root access $N"  | tee -a $LOG_FILE
     exit 1
 else
     echo "you are running with root access" | tee -a $LOG_FILE
@@ -49,9 +49,9 @@ fi
 dnf list installed nginx &>>$LOG_FILE
  if [ $? -ne 0 ]
 then
-    echo "nginx is not installed... going to install it" | tee -a $LOG_FILE  
+    echo "nginx is not installed... going to install it"  | tee -a $LOG_FILE
     dnf install nginx -y &>>$LOG_FILE
-    VALIDATE $? "nginx" 
+    VALIDATE $? "nginx"    
 else
-    echo -e "Nothing to do nginx... $Y already installed $N" | tee -a $LOG_FILE
+   echo -e "Nothing to do nginx... $Y already installed $N"  | tee -a $LOG_FILE
 fi
