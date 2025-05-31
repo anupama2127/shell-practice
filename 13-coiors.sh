@@ -29,7 +29,7 @@ then
     dnf install mysql -y
     VALIDATE $? "MYSQL"    
 else
-    echo -e  "Nothing to do MYSQL... $Y  already installed $N"
+    echo -e  "Nothing to do MYSQL... $Y already installed $N"
 fi  
 dnf list installed python3
 if [ $? -ne 0 ]
@@ -49,4 +49,4 @@ then
 else
     echo "Nothing to do nignx... $Y already installed $N" 
 
-fi  
+fi
