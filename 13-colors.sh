@@ -47,7 +47,7 @@ then
     dnf install nginx -y
     VALIDATE $? "nginx"    
 else
-    echo "Nothing to do nignx... $Y already installed $N" 
+    echo "Nothing to do nignx... $Y already installed $N"
 
 fi
 
