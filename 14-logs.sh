@@ -55,3 +55,6 @@ then
 else
     echo -e "Nothing to do nginx... $Y already installed $N" | tee -a $LOG_FILE
 fi  
+
+
+
