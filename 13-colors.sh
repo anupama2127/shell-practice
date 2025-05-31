@@ -50,3 +50,4 @@ else
     echo "Nothing to do nignx... $Y already installed $N" 
 
 fi
+
